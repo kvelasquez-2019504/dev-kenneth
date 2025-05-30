@@ -1,6 +1,5 @@
 /* Fondo principal con degradado vertical y altura dinámica según el viewport menos el navbar */
 #main {
-    background: linear-gradient(#0d0c14, #2b284d); /* Degradado de dos tonos oscuros */
     height: calc(100vh - 70px); /* Altura total menos 70px (navbar) */
 }
 
@@ -55,11 +54,6 @@
     margin-right: 0px 10px;
 }
 
-/* Clase utilitaria para ocultar elementos */
-.hidden {
-    display: none;
-}
-
 /* Título principal grande y en negrita */
 #name h1 {
     font-size: 2.95rem;
@@ -71,6 +65,13 @@
     .autobiography{
         max-height:250px;
         overflow-y:scroll;
+    }
+    .img-principal{
+        min-height: 300px;
+        width: 80%;
+    }
+    .img-principal img{
+        min-height: 300px;
     }
 }
 

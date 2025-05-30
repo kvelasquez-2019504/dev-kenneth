@@ -1,0 +1,74 @@
+/* Contenedor principal de la página de sueños, fuerza color blanco en todo el contenido */
+.my-dreams-container{
+    color:white !important;
+}
+
+/* Sección de sueños: ocupa toda la altura de la ventana (pantallas grandes) */
+.dreams {
+    height: 100vh;
+}
+
+/* Espaciado para las secciones principales */
+#Personales,#Metas{
+    margin: 0px 10px;
+}
+
+#Personales{
+    margin-top: 20px;
+}
+
+/* Título de cada sección de sueños/metas */
+.dreams h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+/* Tarjeta de cada sueño/meta: diseño tipo card, con sombra y bordes redondeados */
+.dream-article {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.4); /* Sombra blanca translúcida */
+    transition: transform 0.2s ease; /* Animación suave al hacer hover */
+}
+
+/* Efecto hover: ligera ampliación de la tarjeta */
+.dream-article:hover {
+    transform: scale(1.02);
+}
+
+/* Imagen dentro de la tarjeta de sueño/meta */
+.dream-article img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformarla */
+}
+
+/* Texto descriptivo dentro de la tarjeta de sueño/meta */
+.dream-article p {
+    flex: 1;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Descripción introductoria de cada sección de sueños/metas */
+.description-dream{
+    margin-bottom: 10px;
+}
+
+/* Responsividad: en pantallas menores a 800px, la sección de sueños se adapta en altura */
+@media (max-width: 800px){
+     .dreams{
+        height: auto;
+     }
+}

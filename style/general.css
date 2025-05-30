@@ -1,9 +1,11 @@
+/* Reset de márgenes y paddings, y fuente base para todo el documento */
 *{
     margin: 0px;
     padding: 0px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+/* Contenedor principal: ocupa todo el ancho, centra contenido en columna */
 .container-1{
     width: 100%;
     display: flex;
@@ -12,26 +14,64 @@
     justify-content: center;
 }
 
+/* Contenedor secundario: ancho máximo para contenido centralizado */
 .container-2{
     width: 100%;
     max-width: 1280px;
 }
 
+/* Posicionamiento relativo para elementos que serán referencia de hijos absolutos */
 .relative{
     position: relative;
 }
 
+/* Posicionamiento absoluto para superponer o ubicar elementos respecto a su padre relativo */
 .absolute{
     position: absolute;
 }
 
+/* Utilidad para usar flexbox en elementos */
 .flex{
     display: flex;
 }
 
+/* Imagen adaptable: ocupa todo el contenedor, mantiene proporción sin recortar */
 .img-2{
     width: 100%;
     height: 100%;
-    /* object-fit: cover; */
-    object-fit: contain;
+    /* object-fit: cover;  // Alternativa si quieres recortar la imagen para llenar el contenedor */
+    object-fit: contain; /* Muestra la imagen completa ajustando al contenedor */
 }
+
+/* Clase utilitaria para ocultar elementos visualmente */
+.hidden {
+    display: none;
+}
+/* Fondo principal con degradado vertical y altura dinámica según el viewport menos el navbar */
+#main {
+    background: linear-gradient(#0d0c14, #2b284d); /* Degradado de dos tonos oscuros */
+}
+
+/* Botón flotante para volver al inicio (esquina inferior derecha) */
+.back-home{
+    border-radius: 50%;
+    padding: 9px;
+    position:fixed;
+    border: 1px solid #444;
+    bottom: 10px;
+    right: 15px;
+    width: 40px;
+    background-color: white;
+    transition: all 0.3s ease; /* Transición suave al hacer hover */
+}
+/* Efecto hover: reduce el tamaño del botón */
+.back-home:hover{
+    transform: scale(0.8);
+}
+
+/* Imagen dentro del botón de volver al inicio */
+.back-home img{
+    width: 100%;
+    height: 100%;
+}
+
