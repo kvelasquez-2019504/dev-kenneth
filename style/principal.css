@@ -1,0 +1,122 @@
+/* Fondo principal con degradado vertical y altura dinámica según el viewport menos el navbar */
+#main {
+    background: linear-gradient(#0d0c14, #2b284d); /* Degradado de dos tonos oscuros */
+    height: calc(100vh - 70px); /* Altura total menos 70px (navbar) */
+}
+
+/* El contenedor secundario ocupa toda la altura del principal */
+#main .container-2 {
+    height: 100%;
+}
+
+/* Tarjeta de autobiografía con bordes redondeados y fondo blanco */
+.autobiography {
+    margin: 20px 10px;
+    background-color: white;
+    border-radius: 0px 20px 20px 20px; /* Solo esquinas inferiores y superior derecha */
+    padding: 15px;
+    bottom: 0px;
+}
+
+/* Contenedor de la imagen principal, posicionamiento absoluto para superponer */
+.img-principal {
+    width: auto;
+    height: 90%;
+    top: 0px;
+    left: 10px;
+
+}
+
+/* Efecto hover: zoom, desplazamiento y máscara de degradado para efecto visual avanzado */
+.img-principal:hover img {
+    transform: scale(1.1); /* Zoom al pasar el mouse */
+    padding-left: 10px;
+    mask-image:
+        linear-gradient(to left, black 60%, transparent); /* Degradado de máscara */
+}
+
+/* Imagen principal: ocupa todo el contenedor y aplica máscara de degradado */
+.img-principal img {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    mask-image:
+        linear-gradient(to left, black 80%, transparent); /* Efecto de desvanecimiento */
+}
+
+/* Nombre sobre la imagen, alineado a la derecha y centrado verticalmente */
+.name {
+    position: absolute;
+    color: white;
+    width: 50%;
+    right: 0px;
+    top: 20%;
+    text-align: center;
+    margin-right: 0px 10px;
+}
+
+/* Clase utilitaria para ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* Título principal grande y en negrita */
+#name h1 {
+    font-size: 2.95rem;
+    font-weight: 600;
+}
+
+/* Responsividad: en pantallas muy pequeñas, la autobiografía tiene scroll vertical */
+@media (max-width:300px){
+    .autobiography{
+        max-height:250px;
+        overflow-y:scroll;
+    }
+}
+
+/* Responsividad: en pantallas medianas, alterna visibilidad de #name y #name2 */
+@media (min-width: 540px) {
+    #name2 {
+        display: none !important;
+    }
+
+    #name {
+        display: block !important;
+    }
+}
+
+/* Responsividad: en pantallas menores a 610px, ajusta visibilidad y tamaño de elementos */
+@media (max-width: 610px) {
+    #name {
+        display: none;
+    }
+
+    #name2 {
+        display: block;
+        position: static;
+    }
+
+    #name2 h1 {
+        font-size: 1.2rem;
+    }
+
+    .img-principal {
+        width: 80%;
+        height: auto;
+        object-fit: cover; /* Mantiene proporción de la imagen */
+    }
+
+    #main {
+        height: 100%;
+    }
+}
+
+/* Responsividad: en pantallas grandes, el nombre ocupa más espacio y el título es más grande */
+@media (min-width: 850px){
+    #name{
+        width: 70%;
+    }
+    #name h1{
+        font-size: 4rem;
+    }
+}
