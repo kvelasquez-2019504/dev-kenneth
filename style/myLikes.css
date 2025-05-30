@@ -1,0 +1,116 @@
+#main{
+    height: auto;
+    padding-bottom: 2%;
+}
+/* Sección de sueños: ocupa toda la altura de la ventana (pantallas grandes) */
+.likes {
+    height: 100%;
+}
+
+/* Cards de gustos en columna, con imagen y título siempre visibles, descripción solo en hover */
+.list-likes {
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.like-card {
+    width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1rem 0.5rem 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.like-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.like-card h2 {
+    font-size: 1.2rem;
+    color: #222;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.like-desc {
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s, max-height 0.3s;
+    color: #444;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 0.5rem;
+    margin-bottom: 0.5rem;
+    pointer-events: none;
+}
+
+.like-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+.like-card:hover .like-desc {
+    opacity: 1;
+    max-height: 120px;
+    pointer-events: auto;
+}
+
+.description-likes {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    color: white;
+}
+
+/* Card especial para Alejandro Taboada */
+.like-card.destacado {
+    border: 2.5px solid #ffb300;
+    background: linear-gradient(135deg, #fffbe6 80%, #ffe082 100%);
+    box-shadow: 0 4px 18px 2px #ffe08299, 0 2px 8px rgba(0,0,0,0.10);
+    position: relative;
+}
+.like-card.destacado h2 {
+    color: #b8860b;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #ffe082;
+}
+.like-card.destacado img {
+    border: 3px solid #ffb300;
+    box-shadow: 0 0 12px #ffe08299;
+}
+.like-card.destacado .like-desc {
+    color: #7c5a00;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .like-card {
+        width: 95%;
+        margin: auto 15px;
+    }
+    .likes{
+        height: auto;
+    }
+    .list-likes {
+        gap: 1rem;
+    }
+}

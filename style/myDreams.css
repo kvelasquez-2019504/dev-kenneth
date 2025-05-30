@@ -3,6 +3,9 @@
     color:white !important;
 }
 
+#main{
+    padding-bottom: 2%;
+}
 /* Sección de sueños: ocupa toda la altura de la ventana (pantallas grandes) */
 .dreams {
     height: 100vh;
